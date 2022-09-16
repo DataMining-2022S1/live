@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BSc - Data Mining 1</title>
+    <title>BSc - Data Mining1</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -96,6 +96,10 @@
 											<a href="../../../topics/01-Module_Overview/index.html#01-Preliminary_Lab">Preliminary Lab</a>
 										</li>
 										
+										<li >
+											<a href="../../../topics/01-Module_Overview/index.html#03-Module_Introduction">Module Introduction</a>
+										</li>
+										
 									</ul>
 								</li>
 							</ul>
@@ -184,7 +188,7 @@ Next we cover installation of python using either a full <a href="https://www.an
 <p>Therefore, we will use <a href="https://jupyter.org">Jupyter</a> as the primary learning tool, both for sourcing the data and for the data mining process itself.</p>
 <p><a name="Installation"></a></p>
 <h2>Installation</h2>
-<p>While any Python 3.9 distribution should be suitable for our needs, we recommend you either install a full <a href="https://www.anaconda.com/products/individual">anaconda</a> distribution (about 3.1 GB) or a reduced <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> distribution (about 248MB).</p>
+<p>While any Python 3.8 distribution should be suitable for our needs, we recommend you either install a full <a href="https://www.anaconda.com/products/individual">anaconda</a> distribution (about 3.1 GB) or a reduced <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> distribution (about 248MB).</p>
 <p>Which should you choose? To be honest, it doen't really matter but </p>
 <ul>
 <li>Want to get python development up and running quickly while suffering poor connection issues &mdash; use <code>miniconda</code>.</li>
@@ -203,14 +207,14 @@ Next we cover installation of python using either a full <a href="https://www.an
 <h3>Anaconda (Full python distribution)</h3>
 <p>To install anaconda:</p>
 <ul>
-<li>Pick any suitable 64-bit, Python 3.9 installer for you system from <a href="https://www.anaconda.com/products/individual">anaconda</a>.</li>
+<li>Pick any suitable 64-bit, Python 3.8 installer for you system from <a href="https://www.anaconda.com/products/individual">anaconda</a>.</li>
 <li>Run installer and default options should work for your system. Under OS X, I typically install into my home directory, so will end up with a folder <code>~/anacond3</code>.</li>
 </ul>
 <h3>Miniconda (python distribution)</h3>
 <p>To install miniconda:</p>
 <ul>
-<li>Pick any suitable 64-bit, Python 3.9 installer for you system from <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>.</li>
-<li>Run installer and default options should work for your system. Under Macos, I typically install into my home directory, so will end up with a folder <code>~/miniconda3</code>.</li>
+<li>Pick any suitable 64-bit, Python 3.8 installer for you system from <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a>.</li>
+<li>Run installer and default options should work for your system. Under OS X, I typically install into my home directory, so will end up with a folder <code>~/miniconda3</code>.</li>
 </ul>
 <h3>Verify Installation</h3>
 <p>Regardless of anaconda/miniconda option you picked, once installed you should be able to run python from the command line </p>
@@ -223,8 +227,8 @@ python
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Python <span class="m">3</span>.9.13 <span class="o">(</span>main, Aug <span class="m">25</span> <span class="m">2022</span>, <span class="m">23</span>:26:10<span class="o">)</span>
-<span class="o">[</span>GCC <span class="m">11</span>.2.0<span class="o">]</span> :: Anaconda, Inc. on linux
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Python <span class="m">3</span>.8.11 <span class="o">(</span>default, Aug  <span class="m">3</span> <span class="m">2021</span>, <span class="m">15</span>:09:35<span class="o">)</span> 
+<span class="o">[</span>GCC <span class="m">7</span>.5.0<span class="o">]</span> :: Anaconda, Inc. on linux
 Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.
 &gt;&gt;&gt; 
 </code></pre></div>
@@ -251,11 +255,11 @@ Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&
 </td></tr></table>
 <h3>Side Note: Environments</h3>
 <p>Both <code>conda</code> and <code>pip</code> support the idea of environments where within the one python distributions you might have a multiple of environments. This is to help avoid version conflicts between modules.  <code>aanconda</code> and <code>miniconda</code> both start with one default environment called <code>root</code>.  If you wish to use environments, you need to apply two steps: 1) create an environment using </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">dataMining</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.9</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">data_mining</span>
 </code></pre></div>
 </td></tr></table>
 <p>and 2) activate it using </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">conda</span> <span class="n">activate</span> <span class="n">dataMining</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">conda</span> <span class="n">activate</span> <span class="n">data_mining</span>
 </code></pre></div>
 </td></tr></table>
 <p>Since all of the packages that we plan to use work are (currently, Jan 2021) compatible we won't need to use multiple environments but they are a good idea and if you are interested there is a nice introduction at <a href="https://astrobiomike.github.io/unix/conda-intro">
@@ -272,6 +276,7 @@ Happy Belly Bioinformatic</a>.</p>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">y</span> <span class="n">jupyterlab</span>
 </code></pre></div>
 </td></tr></table>
+<p>(last update Feb 11)</p>
 <h3>Packages that need installing if using <code>miniconda</code> or <code>anaconda</code></h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span>
@@ -290,7 +295,7 @@ Happy Belly Bioinformatic</a>.</p>
 <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">y</span> <span class="n">pingouin</span>
 </code></pre></div>
 </td></tr></table>
-<p>(last update 2022-09-03)</p>
+<p>(last update 2021-09-03)</p>
 		
 		<ul class="pager">
 			
